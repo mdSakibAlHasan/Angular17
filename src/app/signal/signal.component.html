@@ -1,0 +1,29 @@
+<h2>Signal component</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Full Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{firstName()}}</td>
+            <td>{{lastName()}}</td>
+            <td>{{fullName()}}</td>
+        </tr>
+        <tr>
+            <td>
+                <input #fname type="text" [value]="firstName()" placeholder="change first name">
+                <button (click)="changeFirstName(fname.value)">Change</button>
+            </td>
+            <td>
+                <input #lname type="text" [value]="lastName()" placeholder="change last name">
+                <button (click)="changeLastName(lname.value)">Change</button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
