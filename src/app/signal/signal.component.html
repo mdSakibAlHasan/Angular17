@@ -3,8 +3,8 @@
 <table border="1">
     <thead>
         <tr>
-            <th>Last Name</th>
             <th>First Name</th>
+            <th>last Name</th>
             <th>Full Name</th>
         </tr>
     </thead>
@@ -27,3 +27,27 @@
         
     </tbody>
 </table>
+
+<h2>User list</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nmae</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees()">
+            <td>{{emp.name}}</td>
+            <td>{{emp.position}}</td>
+            <td>{{emp.department}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" placeholder="Enter name">
+    <input type="text" formControlName="position" placeholder="Position">
+    <input type="text" formControlName="department" placeholder="department">
+    <input type="submit" [disabled]="employeeForm.invalid">
+</form>
